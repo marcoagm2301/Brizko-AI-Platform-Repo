@@ -1,7 +1,7 @@
 # 📦 AI Supply Chain Agent: Purchase Order Validator
 
 **Autor:** Marco Antonio Gómez-Morales  
-**Demo en vivo:** [Inserta aquí la URL pública de tu app en Dify]  
+**Demo en vivo:** https://udify.app/workflow/sk2ZaoOc6sN4Kfg7  
 **Video de demostración:** [Inserta aquí el enlace a tu video de 3-5 min]
 
 ## 🎯 ¿Qué hace este proyecto?
@@ -19,7 +19,7 @@ Este agente resuelve el problema de extremo a extremo:
 ## 🚀 Cómo correrlo y probarlo
 Dado que el proyecto fue construido y desplegado mediante orquestación visual en Dify, no es necesario levantar un servidor local para probar la funcionalidad principal.
 
-1. Abre la [URL de la aplicación en vivo](#).
+1. Abre la app [https://udify.app/workflow/sk2ZaoOc6sN4Kfg7](#).
 2. En el cuadro de entrada, pega el texto de una Orden de Compra.
 3. Ejecuta el agente y observa el diagnóstico.
 

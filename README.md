@@ -41,7 +41,7 @@ Dado que el proyecto fue construido y desplegado mediante orquestación visual e
 *Favor de confirmar la fecha de entrega a nuestra planta.*
 ## 
 
-**Ejemplo #2 (Tiene SKUs inventados, precios bajísimos que el cliente intentó "colar" y peticiones masivas de artículos que están a punto de agotarse o ya están en cero.):**
+**Ejemplo #2 (Tiene SKUs inventados, precios bajísimos que el cliente intentó "colar" y peticiones masivas de artículos que están a punto de agotarse o ya están en cero):**
 
 *ORDEN DE COMPRA: AUTOMATIZACIÓN GLOBAL S.A. DE C.V.*
 *PO Número: 2026-F9933*
@@ -66,12 +66,12 @@ Dado que el proyecto fue construido y desplegado mediante orquestación visual e
 *Facturen todo junto y me avisan.*
 ## 
 
-***Nota: En este repositorio se incluye el archivo `ProductsList.csv` que actúa como la base de datos oficial, así como el bloque de código Python (`validator_logic.py`) utilizado en el nodo de procesamiento.***
+***Nota: En este repositorio se incluye el archivo `ProductsList.csv` que actúa como la base de datos oficial, así como el bloque de código Python (`codigoPO.py`) utilizado en el nodo de procesamiento.***
 
 ## ⚖️ Decisiones Clave y Tradeoffs (Arquitectura)
 
 Al diseñar esta solución, prioricé el **sentido de producto y la confiabilidad operativa** sobre la creación de infraestructura desde cero:
 
 * **Orquestación en Dify vs. Desarrollo Custom:** Opté por utilizar Dify como framework de agentes. Viniendo de entornos corporativos donde se utilizan plataformas visuales robustas para el manejo de automatizaciones, Dify me permitió acelerar el *time-to-market* y enfocarme en las reglas de negocio logísticas, en lugar de gastar horas del fin de semana configurando un backend en FastAPI y un frontend en React.
-* **Separación de IA vs. Lógica Determinista:** Un gran tradeoff fue decidir *qué* hace el LLM. Decidí **no** usar IA (ni RAG) para comparar precios o existencias, ya que los LLMs pueden alucinar. El LLM (`gpt-4o-mini`, Temp 0) se usa *exclusivamente* como un motor de extracción de datos a JSON. La validación matemática de inventario y costos recae en un script de Python puro, garantizando un 100% de precisión.
-* **Manejo de Stock Real:** Decidí expandir el reto original incluyendo no solo validación de precios, sino niveles de inventario reales en el diccionario de datos. Esto refleja un caso de uso logístico mucho más realista, permitiendo prever rupturas de la cadena de suministro antes de que la orden pase a almacén.
+* **Separación de IA vs. Lógica Determinista:** Un gran tradeoff fue decidir *qué* hace el LLM. Decidí **no** usar IA (ni RAG) para comparar precios o existencias, ya que los LLMs pueden alucinar. El LLM (`gpt-4o-mini`, Temp 0.5) se usa *exclusivamente* como un motor de extracción de datos a JSON. La validación matemática de inventario y costos recae en un script de Python puro, garantizando un 100% de precisión.
+* **Manejo de Stock Real:** Decidí expandir el reto original incluyendo no solo validación de precios, sino niveles de inventario reales en el diccionario de datos. Esto refleja un caso de uso logístico mucho más realista (Stock variable y precios reales), permitiendo prever rupturas de la cadena de suministro antes de que la orden pase a almacén.

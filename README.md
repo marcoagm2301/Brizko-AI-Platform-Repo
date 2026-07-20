@@ -20,7 +20,7 @@ Este agente resuelve el problema de extremo a extremo:
 Dado que el proyecto fue construido y desplegado mediante orquestación visual en Dify, no es necesario levantar un servidor local para probar la funcionalidad principal.
 
 1. Abre la app https://udify.app/workflow/sk2ZaoOc6sN4Kfg7.
-2. En el cuadro de entrada, pega el texto de una Orden de Compra.
+2. En el cuadro de entrada, pega el texto de una Orden de Compra que se encuentran en los ejemplos de abajo.
 3. Ejecuta el agente y observa el diagnóstico.
 
 ## **Ejemplos de Ordenes de Compra:**
